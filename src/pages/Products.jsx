@@ -1,3 +1,4 @@
+
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import ProductCard from "@/components/products/ProductCard";
@@ -17,7 +18,7 @@ const Products = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   
-  // Mock products data (in a real app, this would come from an API)
+  // Mock products data with updated images
   const mockProducts = [
     // Plywoods & Boards
     {
@@ -27,7 +28,7 @@ const Products = () => {
       category: "plywood",
       subcategory: "bwr",
       price: 1200,
-      imageUrl: "https://images.unsplash.com/photo-1533090481720-856c6e3c1fdc?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1599767557051-7c8d3c3be974?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "plywood2",
@@ -36,7 +37,7 @@ const Products = () => {
       category: "plywood",
       subcategory: "mr",
       price: 950,
-      imageUrl: "https://images.unsplash.com/photo-1615529151169-7b1ff50dc7f2?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1605895773825-ddf3244f4d28?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "plywood3",
@@ -45,7 +46,7 @@ const Products = () => {
       category: "plywood",
       subcategory: "marine",
       price: 1500,
-      imageUrl: "https://images.unsplash.com/photo-1611457194403-d3aca4cf9d11?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1616627561950-9458b3767a8f?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "plywood4",
@@ -54,7 +55,7 @@ const Products = () => {
       category: "plywood",
       subcategory: "mdf",
       price: 850,
-      imageUrl: "https://images.unsplash.com/photo-1496247749665-49cf5b1022e9?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1611535720020-5de242724a9c?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "plywood5",
@@ -63,7 +64,7 @@ const Products = () => {
       category: "plywood",
       subcategory: "particle",
       price: 650,
-      imageUrl: "https://images.unsplash.com/photo-1519947486511-46149fa0a254?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1589939705384-5185137a7f0f?auto=format&fit=crop&q=80&w=600&h=400"
     },
     
     // Glass Types
@@ -83,7 +84,7 @@ const Products = () => {
       category: "glass",
       subcategory: "frosted",
       price: { min: 550, max: 1100 },
-      imageUrl: "https://images.unsplash.com/photo-1600607686527-27cecbcaf290?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1561727901-d5d20a6f9c7d?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "glass3",
@@ -92,7 +93,7 @@ const Products = () => {
       category: "glass",
       subcategory: "decorative",
       price: { min: 650, max: 1500 },
-      imageUrl: "https://images.unsplash.com/photo-1503602642458-232111445657?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1623835563076-5463ba78f1cc?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "glass4",
@@ -121,7 +122,7 @@ const Products = () => {
       category: "other",
       subcategory: "laminates",
       price: { min: 350, max: 950 },
-      imageUrl: "https://images.unsplash.com/photo-1618221771885-8c5c4ce783a4?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1614402096334-d3415846e92f?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "other2",
@@ -139,7 +140,7 @@ const Products = () => {
       category: "other",
       subcategory: "edgebands",
       price: { min: 120, max: 300 },
-      imageUrl: "https://images.unsplash.com/photo-1555441293-6c6fb1eb9773?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1610019080778-471083eb5965?auto=format&fit=crop&q=80&w=600&h=400"
     },
     {
       id: "other4",
@@ -148,7 +149,7 @@ const Products = () => {
       category: "other",
       subcategory: "hardware",
       price: 1800,
-      imageUrl: "https://images.unsplash.com/photo-1517420704952-d9f39e95b43e?auto=format&fit=crop&q=80&w=600&h=400"
+      imageUrl: "https://images.unsplash.com/photo-1586864387789-628af9feed72?auto=format&fit=crop&q=80&w=600&h=400"
     },
   ];
   
